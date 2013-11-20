@@ -3,11 +3,11 @@ Date: Wed, 23 Jan 2013 17:27:24 -0600
 Subject: [PATCH] Removed tests that dont exist
 
 ---
- Makefile | 21 +++------------------
- 1 file changed, 3 insertions(+), 18 deletions(-)
+ Makefile | 19 +++----------------
+ 1 file changed, 3 insertions(+), 16 deletions(-)
 
 diff --git a/Makefile b/Makefile
-index 07606eb..3aa7440 100644
+index 2a77bde..6738a42 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -4,9 +4,8 @@
@@ -43,14 +43,13 @@ index 07606eb..3aa7440 100644
 -	make -C test clean
  
  Makefile.local:
- 	echo '# Local configuration' > $@
-@@ -50,7 +36,6 @@ Makefile.local:
+ 	@echo '# Local configuration' > $@
+@@ -50,6 +36,7 @@ Makefile.local:
+ 	@false
  
  # Pseudo targets for configuration
- .SILENT: Makefile.local
--.PHONY: default all clean test pindel pindel-debug cppcheck acceptance-tests \
--	coverage-tests functional-tests regression-tests
-+.PHONY: default all clean pindel pindel-debug cppcheck \
++.SILENT: Makefile.local
+ .PHONY: default all clean test pindel pindel-debug cppcheck acceptance-tests \
+ 	coverage-tests functional-tests regression-tests
  .PRECIOUS: Makefile.local
- .IGNORE: clean
 -- 
