@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
-DEB_DIR=debian/pindel0.2.4t
-VERSION=0.2.4t
+DEB_DIR=debian/pindel0.2.5
+VERSION=0.2.5
 
 %:
 	dh $@

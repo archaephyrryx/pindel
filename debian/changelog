@@ -1,17 +1,5 @@
-pindel0.2.4t (0.2.4t-3) lucid; urgency=low
+pindel0.2.5 (0.2.5-1) lucid; urgency=low
 
-  * remove quilt
+  * New source code
 
- -- Gabriel Sanderson <gsanders@linus220.gsc.wustl.edu>  Fri, 25 Jan 2013 16:44:14 -0600
-
-pindel0.2.4t (0.2.4t-2) lucid; urgency=low
-
-  * Fixed dh_auto_clean to not use make clean, since make clean builds
-
- -- Gabriel Sanderson <gsanders@linus220.gsc.wustl.edu>  Fri, 25 Jan 2013 16:41:11 -0600
-
-pindel0.2.4t (0.2.4t-1) lucid; urgency=low
-
-  * Initial release. 
-
- -- Gabriel Sanderson <gsanders@genome.wustl.edu>  Wed, 23 Jan 2013 13:56:34 -0600
+ -- Allison Regier <aregier@genome.wustl.edu>  Wed, 20 Nov 2013 16:44:14 -0600
