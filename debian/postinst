@@ -16,7 +16,7 @@
 # the debian-policy package
 
 
-EXECUTABLES="pindel"
+EXECUTABLES="pindel pindel2vcf"
 MANPAGES=""
 PRIORITY=1
 EXE_VERSION_SUFFIX="0.2.5"

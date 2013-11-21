@@ -12,6 +12,7 @@ override_dh_auto_clean:
 override_dh_auto_install:
 	mkdir -p $(DEB_DIR)/usr/bin
 	install -m 755 src/pindel $(DEB_DIR)/usr/bin/pindel$(VERSION)
+	install -m 755 src/pindel2vcf $(DEB_DIR)/usr/bin/pindel2vcf$(VERSION)
 
 override_dh_strip:
 	echo "Do not create a *dbgsym*.ddeb package."
