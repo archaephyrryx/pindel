@@ -5,8 +5,8 @@ Subject: [PATCH] Break SAMTOOLS out into SAMTOOLS_LIB and SAMTOOLS_INC
 ---
  Makefile       |  5 +++--
  Makefile.local |  3 ++-
- src/Makefile   | 20 +++++++-------------
- 3 files changed, 12 insertions(+), 16 deletions(-)
+ src/Makefile   | 19 +++++++------------
+ 3 files changed, 12 insertions(+), 15 deletions(-)
 
 diff --git a/Makefile b/Makefile
 index 6738a42..c58aa7d 100644
@@ -45,10 +45,10 @@ index 8a622f5..0472b96 100644
  # Number of threads for functional tests, set to 2 or more, recommended to match number of cores
  THREADS=
 diff --git a/src/Makefile b/src/Makefile
-index b7b7a8c..1634eba 100644
+index ba7847c..08bb818 100644
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -27,14 +27,11 @@ test:	pindel $(addprefix cppcheck-result-,$(SOURCES:.cpp=.xml))
+@@ -27,13 +27,11 @@ test:	pindel $(addprefix cppcheck-result-,$(SOURCES:.cpp=.xml))
  # Debug version of pindel
  pindel-debug: $(SOURCES:.cpp=-debug.o)
  	$(CXX) $(LDFLAGS) $^ -fopenmp -g -pg -fprofile-arcs -ftest-coverage \
@@ -60,12 +60,11 @@ index b7b7a8c..1634eba 100644
  # Normal version of pindel	
  pindel:	$(SOURCES:.cpp=.o)
 -	$(CXX) $(LDFLAGS) $^ -O3 -fopenmp -lm -lz -L$(SAMTOOLS) -lbam -o $@
--#	$(CXX) $(LDFLAGS) $^ -O3 -fopenmp -Bstatic -static-libgcc -static  -lm -lz -L$(SAMTOOLS) -lbam -o $@
 +	$(CXX) $(LDFLAGS) $^ -O3 -fopenmp -lm -lz -L$(SAMTOOLS_LIB) -lbam -o $@
- 
- clean:
- 	$(RM) pindel pindel-debug $(OBJECTS) $(OBJECTS_DEBUG) $(CPPCHECKS) \
-@@ -42,31 +39,28 @@ clean:
+ #	$(CXX) $(LDFLAGS) $^ -O3 -fopenmp -Bstatic -static-libgcc -static  -lm -lz -L$(SAMTOOLS) -lbam -o $@
+ 	$(CXX) -O3 SAM_2_PINDEL_cin_2011Sept26.cpp -o sam2pindel
+ 	$(CXX) -O3 vcfcreator.cpp -o pindel2vcf
+@@ -44,31 +42,28 @@ clean:
  
  # Pattern rule to create normal .o files	
  %.o: %.cpp

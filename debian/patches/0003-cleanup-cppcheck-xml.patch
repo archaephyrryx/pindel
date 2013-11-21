@@ -7,13 +7,13 @@ Subject: [PATCH] cleanup cppcheck xml
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/Makefile b/src/Makefile
-index cb2499a..b7b7a8c 100644
+index 74cfee7..ba7847c 100644
 --- a/src/Makefile
 +++ b/src/Makefile
-@@ -38,7 +38,7 @@ pindel:	$(SOURCES:.cpp=.o)
+@@ -40,7 +40,7 @@ pindel:	$(SOURCES:.cpp=.o)
  
  clean:
- 	$(RM) pindel pindel-debug $(OBJECTS) $(OBJECTS_DEBUG) $(CPPCHECKS) \
+ 	$(RM) pindel pindel2vcf pindel-debug $(OBJECTS) $(OBJECTS_DEBUG) $(CPPCHECKS) \
 -	    *.gcov *.gcda *.gcno gmon.out *.d *.o
 +	    *.gcov *.gcda *.gcno gmon.out *.d *.o cppcheck-result*.xml
  
